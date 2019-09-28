@@ -1,0 +1,27 @@
+{
+  "constants": [
+    {
+      "name": "statuteYears",
+      "value": 3
+    }
+  ],
+  "rules": [
+    {
+      "name": "haaja",
+      "hhh": "jsajaska",
+      "description": "hdhdhdhde",
+      "isEnabled": true,
+      "precedence": 1,
+      "condition": "1==1",
+      "action": "filter"
+    },
+    {
+      "name": "hjdhdhddh",
+      "description": "kdkdkdk",
+      "isEnabled": true,
+      "prec": 2,
+      "condition": "a==false",
+      "action": "filter"
+    }
+  ]
+}
