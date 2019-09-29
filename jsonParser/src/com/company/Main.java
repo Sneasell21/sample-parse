@@ -26,8 +26,8 @@ public class Main {
         Config config =null;
         //
         try {
-            root = new JsonParser().parse(new FileReader("/home/mdiaz/Downloads/miscelanius/jsonParser/src/Resources/sample2.json"));
-          //  config = ConfigFactory.parseFile(new File("/home/mdiaz/Downloads/miscelanius/jsonParser/src/Resources/hoconExample.conf"));
+            root = new JsonParser().parse(new FileReader("/home/mdiaz/Downloads/miscelanius/jsonParser/src/Resources/sample.json"));
+            config = ConfigFactory.parseFile(new File("/home/mdiaz/Downloads/miscelanius/jsonParser/src/Resources/hoconExample.conf"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -36,16 +36,16 @@ public class Main {
         Object node = map.get(map.keySet().stream().findFirst().get());
         //Connect.insert(0,null,map.keySet().stream().findFirst().get(),"");
         System.out.println("root node hascode "+map.hashCode());
-        navigateIntoSet("",(LinkedTreeMap)node,0,map.hashCode());
+        navigateIntoSet("",node,0,map.hashCode());
     }
 
-    public static void navigateIntoSet(String elem, LinkedTreeMap map,int parent,int id) {
+    public static void navigateIntoSet(String elem, Object map,int parent,int id) {
 
         Object node = null;
         if (elem.isEmpty()) {
             node = map;
         } else {
-            node = map.get(elem);
+            node = ((LinkedTreeMap)map).get(elem);
         }
 
         if (node == null) return;
